@@ -5,17 +5,16 @@ import Error404 from "./error/Error404";
 import Footer from "./components/Footer";
 import {
   BrowserRouter as Router,
-  Switch,
+  Redirect,
   Routes,
   Route,
 } from "react-router-dom";
 
 export default function App() {
-  const rotasProtegidas = () => {
-    return (
-      <Route 
-        render={()=>}
-      />
+  const estaLogado = true;
+  const protectedRoutes = (props) => {
+    return(
+      <Route render={()=>props.estaLogado ? (props.children) : (<Redirect to="/login" />)}/>
     )
   }
 
@@ -26,7 +25,7 @@ export default function App() {
         <Routes>
           <Route path="/" Component={Home} />
           <Route path="/home" Component={Home} />
-          <Route path="/sobre" Component={Sobre} />
+            <Route path="/sobre" Component={Sobre} />
           <Route path="*" Component={Error404} />
         </Routes>
         <Footer />
