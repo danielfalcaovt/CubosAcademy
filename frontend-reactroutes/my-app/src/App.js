@@ -14,7 +14,7 @@ export default function App() {
   const rotasProtegidas = () => {
     return (
       <Route 
-        render={()=>{}}
+        render={()=>}
       />
     )
   }
