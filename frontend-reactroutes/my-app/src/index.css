@@ -1,0 +1,59 @@
+* {
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+    font-family: Helvetica, Arial, sans-serif;
+}
+
+#root {
+    display: grid;
+    grid-template-columns: 20% 80%;
+    grid-template-rows: 80% 20%;
+    height: 100vh;
+}
+
+header {
+    background-color: rgb(17, 17, 17);
+    color: white;
+}
+
+header a {
+    text-decoration: none;
+    color: white;
+    font-size: 2rem;
+    margin-top: 15px;
+    border: 2px solid white;
+    border-radius: 15px;
+    padding: 5px;
+    transition: all 0.3s;
+}
+
+header a:hover {
+    background: white;
+    color: gray;
+}
+
+header nav {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.active {
+    transition-duration: 0.3s;
+    color: rgb(54, 54, 54);
+}
+
+main {
+  grid-area: 1/2/1/2;
+}
+
+footer {
+  grid-area: 2/1/2/3;
+  background-color: rgb(17, 17, 17);
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
