@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CEP</title>
+  </head>
+  <body>
+    <form method="post" action="/">
+      <input type="number" id="cep" placeholder="cep" />
+      <button>search</button>
+    </form>
+
+    <script>
+      const form = document.querySelector("form");
+
+      form.addEventListener("submit", (event) => {
+        event.preventDefault();
+        const inputFormChildrenValue = event.target.children["0"].value;
+        fetch(`http://viacep.com.br/ws/${inputFormChildrenValue}/json/`,{
+            method:"GET"
+        }).then((response)=>{
+            response.json()
+            .then(jsonResponse=>{
+                console.log(jsonResponse);
+            });
+        });
+
+      
+      });
+    </script>
+  </body>
+</html>
