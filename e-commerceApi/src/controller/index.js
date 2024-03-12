@@ -1,6 +1,9 @@
 const express = require("express");
 const bodyParser = require("body-parser");
-const routes = require("../model/routes");
+const postRoutes = require("../model/routes/productRoutes/postRoutes");
+const authRoutes = require("../model/routes/authRoutes/authRoutes");
+
+const verificarLogin = require("../model/controllers/filtro/verificarLogin");
 
 const app = express();
 const port = 8080;
@@ -8,7 +11,11 @@ const port = 8080;
 app.use(bodyParser.urlencoded({extended:true}));
 app.use(express.json());
 
-app.use(routes.routes);
+app.use(authRoutes);
+
+app.use(verificarLogin);
+
+app.use(postRoutes);
 
 app.listen(port, () => {
   console.log("App is running...");

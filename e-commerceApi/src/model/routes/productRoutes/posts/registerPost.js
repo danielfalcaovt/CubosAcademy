@@ -1,11 +1,11 @@
 const express = require("express");
-const database = require("../../db/dbConnection");
+const query = require("../../../db/dbConnection");
 
 const postRegister = async (req,res) => {
   try {
     const { postText } = req.body;
     if (postText.length > 0) {
-      const postRegisterInDatabase = await database.query("INSERT INTO posts(texto) VALUES($1)",[postText]);
+      const postRegisterInDatabase = await query("INSERT INTO posts(texto) VALUES($1)",[postText]);
       if (postRegisterInDatabase.rowCount !== 0) {
         const post = postRegisterInDatabase.rows[0];
         res
@@ -28,6 +28,4 @@ const postRegister = async (req,res) => {
   };
 };
 
-module.exports = {
-  postRegister
-};
+module.exports = postRegister
