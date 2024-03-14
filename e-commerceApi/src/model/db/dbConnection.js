@@ -16,5 +16,6 @@ const query = (txt, param) => {
 };
 
 module.exports = {
-  query,
+  query
 };
+

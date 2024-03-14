@@ -1,6 +1,6 @@
 const jwt = require("jsonwebtoken");
 const { query } = require("../../db/dbConnection");
-const jwtTokenSecret = require("../auth/jwtTokenSecret");
+const jwtTokenSecret = require("../../routes/authRoutes/auth/jwtTokenSecret");
 
 async function getUser(userId) {
   try {

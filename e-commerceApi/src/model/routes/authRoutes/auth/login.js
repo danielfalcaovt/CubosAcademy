@@ -1,6 +1,6 @@
 const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
-const database = require("../../db/dbConnection");
+const database = require("../../../db/dbConnection");
 const pass = require("./jwtTokenSecret");
 
 function emailAndPasswordCheck(email,password) {
@@ -15,7 +15,7 @@ async function checkIfUserExist(email) {
 const login = async (req, res) => {
   try {
     const { email, password } = req.body;
-
+    console.log(email, password);
     if (emailAndPasswordCheck(email, password)) {
       res.status(300).json({
         error: "Email and password can not be empty.",

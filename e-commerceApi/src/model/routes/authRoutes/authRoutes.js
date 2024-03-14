@@ -1,10 +1,8 @@
 const { Router } = require("express");
-const cadastro = require("../../controllers/auth/cadastro");
-const login = require("../../controllers/auth/login");
-
+const cadastro = require("./auth/cadastro");
+const login = require("./auth/login");
 
 const authRoutes = Router();
-
 
 authRoutes.get("/", cadastro.registerUser);
 

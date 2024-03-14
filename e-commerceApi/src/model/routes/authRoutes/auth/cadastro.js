@@ -1,8 +1,8 @@
 const express = require("express");
 const bodyParser = require("body-parser");
 const bcrypt = require("bcryptjs");
-const check = require("../../errors/errors");
-const database = require("../../db/dbConnection");
+const check = require("../../../errors/errors");
+const database = require("../../../db/dbConnection");
 
 //ROTA DE REGISTRO
 const registerUser = async (req, res) => {
